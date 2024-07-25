@@ -31,6 +31,7 @@ To run C++ in Visual Studio Code, modify the `tasks.json` file as follows:
     }
   ]
 }
+```
 
 To compile your C++ code, run the following command in the terminal:
 
@@ -39,7 +40,7 @@ g++ *.cpp
 
 After compiling, execute the program with:
 ./a.exe
-
+```
 ## Structure of C++ Files
 
 ### Header Files
