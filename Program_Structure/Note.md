@@ -45,7 +45,7 @@ After compiling, execute the program with:
 
 ### Header Files
 
-Header files (`.h` or `.hpp`) contain:
+Header files (`.h`) contain:
 
 - **Declarations** of classes or variables.
 - **Inline implementations** (if necessary).
