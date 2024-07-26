@@ -103,7 +103,6 @@ int main(){
 - Higher access time
 
 ### e.g
-
 ```
 #include <vector>
 
@@ -124,24 +123,18 @@ int main(){
         vec.push_back(row);
     }
 ```
+### Use:
+- at()
+- front()
+- back()
+- size()
+- capacity()
+- max_size()
 
-Use:
-at()
-front()
-back()
-size()
-capacity()
-max_size()
-
-Modifiers:
-insert()
-erase()
-push_back(),push_front()
-pop_back(),pop_front()
-clear()
-swap()
-
-
-}
-
-
+### Modifiers:
+- insert()
+- erase()
+- push_back(),push_front()
+- pop_back(),pop_front()
+- clear()
+- swap()
