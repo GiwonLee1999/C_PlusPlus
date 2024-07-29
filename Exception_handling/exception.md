@@ -67,7 +67,7 @@ if (condition2)
 - std::range_error A value out of range was calculated
 - std::underflow_error Numeric type overflow was calculated
 
-## Why Exception ?
+## Why Use Exception ?
 
 - The exception handling mechanism has a very minimal performance cost if no exception is thrown.
 - If an exception is thrown, the cost of the stack unwinding is roughly comparable to the cost of the normal function call/resolution mechanism.
