@@ -102,3 +102,61 @@ static const in engine = 56; // allowed, static const integral type
 - non static state members cannot be defined out of class.
 - When you declare a variable or function at file scope the static keyword specifies that the variable or function has internal linkage, i.e. it cannot be referred to outside of the compilation unit in which it is declared.
 - When you declare a local variable to a function as static, the variable has static duration, i.e. its value is kept even when the execution goes out of the scope of this function. In other words, it is a “global variable that has local scope to this function”.
+
+### Friends:
+In principle, private and protected members of a class cannot be accessed from outside the class in which they are declared.
+- A friend (function or class) of a class may access the members designated as private or protected.
+- Friends are functions/methods or classes declared as such within a class.
+- Friends are not members, so they are not inherited from a superclass.
+
+```c++
+class A{
+    private:
+        int width, height;
+    public:
+        void set_values(int,int);
+        int area(){return (width*height)};
+        friend A duplicate(A); // Lets you use private variables
+};
+
+A duplicate (A duplicate){
+    A a;
+    a.width = duplicate.width*2;
+    a.height = duplicate.height*2;
+    retrun (a);
+}
+```
+
+### Friend class
+```c++
+#include <iostream>
+using namespace std;
+class CSquare; //Forward declaration
+class CRectangle {
+    private:
+        int width, height;
+    public:
+        int area () { return (width * height); } 
+        void convert (CSquare a); 
+};
+class CSquare {
+    private:
+        int side;
+    public:
+        void set_side (int a) {side=a;} 
+        friend class CRectangle; // this lets Rectangle to use Square private variable;
+};
+
+void CRectangle::convert (CSquare a) {
+    width = a.side;
+    height = a.side; 
+}
+int main () {
+    CSquare sqr;
+    CRectangle rect;
+    sqr.set_side(4);
+    rect.convert(sqr);
+    cout << rect.area();
+    return 0; 
+}
+```
